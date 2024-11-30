@@ -1,9 +1,9 @@
+# ignore all files
 *
+
+# don't ignore directories
 !*/
-!*.*
+
+# don't ignore files named `input` or files that have an extension
 !input
-*.hi
-*.o
-*.cmi
-*.cmx
-.zig-cache/
+!*.*
