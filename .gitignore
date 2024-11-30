@@ -1,0 +1,9 @@
+*
+!*/
+!*.*
+!input
+*.hi
+*.o
+*.cmi
+*.cmx
+.zig-cache/
