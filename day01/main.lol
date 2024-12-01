@@ -32,18 +32,13 @@ O HAI IM List
         ME IZ set YR index2 AN YR temp MKAY
     IF U SAY SO
 
+    BTW ICantBelieveItCanSort: https://arxiv.org/pdf/2110.01111
     HOW IZ I sort
-        IM IN YR i_loop UPPIN YR i TIL BOTH SAEM i AN DIFF OF ME'Z len AN 1
-            I HAS A swapped ITZ FAIL
-            IM IN YR j_loop UPPIN YR j TIL BOTH SAEM j AN DIFF OF ME'Z len AN SUM OF i AN 1
-                DIFFRINT ME IZ get YR j MKAY AN SMALLR OF ME IZ get YR j MKAY AN ME'Z SRS SUM OF j AN 1
-                O RLY?, YA RLY
-                    ME IZ swap YR j AN YR SUM OF j AN 1
-                    swapped R WIN
-                OIC
+        IM IN YR i_loop UPPIN YR i TIL BOTH SAEM i AN ME'Z len
+            IM IN YR j_loop UPPIN YR j TIL BOTH SAEM j AN ME'Z len
+                DIFFRINT ME IZ get YR i MKAY AN BIGGR OF ME IZ get YR i MKAY AN ME IZ get YR j MKAY
+                O RLY?, YA RLY, ME IZ swap YR i AN YR j MKAY, OIC
             IM OUTTA YR j_loop
-
-            NOT swapped, O RLY?, YA RLY, GTFO, OIC
         IM OUTTA YR i_loop
     IF U SAY SO
 
