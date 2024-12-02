@@ -127,9 +127,9 @@ HOW IZ I main
 
     I HAS A sol
     sol R I IZ part1 YR left_list AN YR right_list MKAY
-    VISIBLE sol
+    VISIBLE SMOOSH "part 1:: " AN sol
     sol R I IZ part2 YR left_list AN YR right_list MKAY
-    VISIBLE sol
+    VISIBLE SMOOSH "part 2:: " AN sol
 IF U SAY SO
 
 I IZ main MKAY
