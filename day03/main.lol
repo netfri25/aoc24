@@ -70,23 +70,21 @@ HOW IZ I solve YR input AN YR should_mul
                 I HAS A comma_index ITZ I IZ index_of YR input AN YR "," MKAY
 
                 I HAS A lhs_str ITZ I IZ take YR input AN YR comma_index MKAY
-                I IZ is_number YR lhs_str MKAY, O RLY?, YA RLY
-                    I HAS A lhs ITZ MAEK lhs_str A NUMBR
-                    input R I IZ drop YR input AN YR SUM OF comma_index AN 1 MKAY
+                NOT I IZ is_number YR lhs_str MKAY, O RLY?, YA RLY, SKIP DIS, OIC
+                I HAS A lhs ITZ MAEK lhs_str A NUMBR
+                input R I IZ drop YR input AN YR SUM OF comma_index AN 1 MKAY
 
-                    I HAS A paren_index ITZ I IZ index_of YR input AN YR ")" MKAY
-                    I HAS A rhs_str ITZ I IZ take YR input AN YR paren_index MKAY
-                    I IZ is_number YR rhs_str MKAY, O RLY?, YA RLY
-                        I HAS A rhs ITZ MAEK rhs_str A NUMBR
-                        input R I IZ drop YR input AN YR paren_index MKAY
+                I HAS A paren_index ITZ I IZ index_of YR input AN YR ")" MKAY
+                I HAS A rhs_str ITZ I IZ take YR input AN YR paren_index MKAY
+                NOT I IZ is_number YR rhs_str MKAY, O RLY?, YA RLY, SKIP DIS, OIC
+                I HAS A rhs ITZ MAEK rhs_str A NUMBR
+                input R I IZ drop YR input AN YR paren_index MKAY
 
-                        should_mul, O RLY?
-                            YA RLY
-                                total R SUM OF total AN PRODUKT OF mul AN PRODUKT OF lhs AN rhs
-                            NO WAI
-                                total R SUM OF total AN PRODUKT OF lhs AN rhs
-                        OIC
-                    OIC
+                should_mul, O RLY?
+                    YA RLY
+                        total R SUM OF total AN PRODUKT OF mul AN PRODUKT OF lhs AN rhs
+                    NO WAI
+                        total R SUM OF total AN PRODUKT OF lhs AN rhs
                 OIC
         OIC
 
