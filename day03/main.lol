@@ -1,39 +1,6 @@
 CAN HAS FILE?
 CAN HAS STRING?
 
-O HAI IM List
-    I HAS A len ITZ A NUMBR
-
-    HOW IZ I new
-        O HAI IM result IM LIEK List
-            I HAS A len ITZ 0
-        KTHX
-
-        FOUND YR result
-    IF U SAY SO
-
-    HOW IZ I push YR number
-        ME HAS A SRS ME'Z len ITZ number
-        ME'Z len R SUM OF ME'Z len AN 1
-    IF U SAY SO
-
-    HOW IZ I get YR index
-        FOUND YR ME'Z SRS index
-    IF U SAY SO
-
-    HOW IZ I set YR index AN YR value
-        ME HAS A SRS index ITZ value
-    IF U SAY SO
-
-    HOW IZ I to_string
-        I HAS A output ITZ "["
-        IM IN YR loop UPPIN YR i TIL BOTH SAEM i AN ME'Z len
-            output R SMOOSH output AN " " AN ME IZ get YR i MKAY
-        IM OUTTA YR loop
-        FOUND YR SMOOSH output AN " ]"
-    IF U SAY SO
-KTHX
-
 HOW IZ I read_input
     I HAS A path ITZ "input"
     I HAS A file ITZ FILE IZ OPEN YR path MKAY
