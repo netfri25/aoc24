@@ -4,10 +4,7 @@ Mappings = dict[int, set[int]]
 
 def parse_input(input: str) -> tuple[Mappings, list[Update]]:
     mappings: dict[int, set[int]] = {}
-    while True:
-        if input[0] == "\n":
-            break
-
+    while input[0] != "\n":
         before, after = int(input[:2]), int(input[3:5])
         input = input[6:]
 
