@@ -252,7 +252,6 @@ HOW IZ I part2 YR input
         input'Z grid IZ set YR pos AN YR "#" MKAY
         BOTH SAEM I IZ visit YR input MKAY AN NOOB, O RLY?, YA RLY
             total R SUM OF total AN 1
-            VISIBLE total
         OIC
         input'Z grid IZ set YR pos AN YR "." MKAY
     IM OUTTA YR loop
