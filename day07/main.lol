@@ -79,24 +79,53 @@ HOW IZ I read_input YR path
     FOUND YR output
 IF U SAY SO
 
-HOW IZ I constructable YR target AN YR equation AN YR index AN YR total AN YR with_concat
-    BOTH OF BOTH SAEM target AN total AN BOTH SAEM index AN equation'Z len, O RLY?, YA RLY, FOUND YR WIN, OIC
-    NOT BOTH SAEM target AN BIGGR OF target AN total, O RLY?, YA RLY, FOUND YR FAIL, OIC
-    BOTH SAEM index AN equation'Z len, O RLY?, YA RLY, FOUND YR FAIL, OIC
+HOW IZ I trim_suffix YR str AN YR suffix
+    DIFFRINT  STRING IZ LEN YR str MKAY  AN  BIGGR OF STRING IZ LEN YR str MKAY AN STRING IZ LEN YR suffix MKAY, O RLY?, YA RLY
+        FOUND YR NOOB
+    OIC
+
+    IM IN YR loop UPPIN YR i TIL BOTH SAEM i AN STRING IZ LEN YR suffix MKAY
+        I HAS A char1 ITZ STRING IZ AT YR str    AN YR DIFF OF STRING IZ LEN YR str    MKAY AN SUM OF i AN 1 MKAY
+        I HAS A char2 ITZ STRING IZ AT YR suffix AN YR DIFF OF STRING IZ LEN YR suffix MKAY AN SUM OF i AN 1 MKAY
+        DIFFRINT char1 AN char2, O RLY?, YA RLY
+            FOUND YR NOOB
+        OIC
+    IM OUTTA YR loop
+
+    FOUND YR STRING IZ SLICE YR str AN YR 0 AN YR BIGGR OF 0 AN DIFF OF STRING IZ LEN YR str MKAY AN STRING IZ LEN YR suffix MKAY MKAY
+IF U SAY SO
+
+HOW IZ I constructable YR target AN YR equation AN YR index AN YR with_concat
+    BOTH SAEM 0 AN index, O RLY?, YA RLY
+        FOUND YR BOTH SAEM target AN equation IZ get YR 0 MKAY
+    OIC
+
+    BOTH SAEM 0 AN BIGGR OF 0 AN target, O RLY?, YA RLY
+        FOUND YR FAIL
+    OIC
 
     I HAS A elem ITZ equation IZ get YR index MKAY
     I HAS A ans ITZ A TROOF
 
     with_concat, O RLY?, YA RLY
-        I HAS A concated ITZ MAEK SMOOSH total AN elem MKAY A NUMBR
-        ans R I IZ constructable YR target AN YR equation AN YR SUM OF index AN 1 AN YR concated AN YR with_concat MKAY
+        I HAS A trimmed ITZ I IZ trim_suffix YR MAEK target A YARN AN YR MAEK elem A YARN
+        DIFFRINT trimmed AN NOOB, O RLY?, YA RLY
+            BOTH SAEM 0 AN STRING IZ LEN YR trimmed MKAY, O RLY?, YA RLY
+                trimmed R "0"
+            OIC
+            I HAS A new_target ITZ MAEK trimmed A NUMBR
+            ans R I IZ constructable YR new_target AN YR equation AN YR DIFF OF index AN 1 AN YR with_concat MKAY
+            ans, O RLY?, YA RLY, FOUND YR WIN, OIC
+        OIC
     OIC
-    ans, O RLY?, YA RLY, FOUND YR WIN, OIC
 
-    ans R I IZ constructable YR target AN YR equation AN YR SUM OF index AN 1 AN YR PRODUKT OF total AN elem AN YR with_concat MKAY
-    ans, O RLY?, YA RLY, FOUND YR WIN, OIC
+    BOTH SAEM 0 AN MOD OF target AN elem, O RLY?, YA RLY
+        I HAS A new_target ITZ QUOSHUNT OF target AN elem
+        ans R I IZ constructable YR new_target AN YR equation AN YR DIFF OF index AN 1 AN YR with_concat MKAY
+        ans, O RLY?, YA RLY, FOUND YR WIN, OIC
+    OIC
 
-    ans R I IZ constructable YR target AN YR equation AN YR SUM OF index AN 1 AN YR SUM OF total AN elem AN YR with_concat MKAY
+    ans R I IZ constructable YR DIFF OF target AN elem AN YR equation AN YR DIFF OF index AN 1 AN YR with_concat MKAY
     ans, O RLY?, YA RLY, FOUND YR WIN, OIC
 
     FOUND YR FAIL
@@ -109,7 +138,7 @@ HOW IZ I count_constructable YR input AN YR with_concat
         I HAS A target ITZ input'Z targets IZ get YR i MKAY
         I HAS A equation ITZ input'Z equations IZ get YR i MKAY
         I HAS A total ITZ equation IZ get YR 0 MKAY
-        I IZ constructable YR target AN YR equation AN YR 1 AN YR total AN YR with_concat MKAY, O RLY?, YA RLY
+        I IZ constructable YR target AN YR equation AN YR DIFF OF equation'Z len AN 1 AN YR with_concat MKAY, O RLY?, YA RLY
             result R SUM OF result AN target
         OIC
     IM OUTTA YR loop
