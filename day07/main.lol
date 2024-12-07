@@ -79,20 +79,15 @@ HOW IZ I read_input YR path
     FOUND YR output
 IF U SAY SO
 
-HOW IZ I trim_suffix YR str AN YR suffix
-    DIFFRINT  STRING IZ LEN YR str MKAY  AN  BIGGR OF STRING IZ LEN YR str MKAY AN STRING IZ LEN YR suffix MKAY, O RLY?, YA RLY
-        FOUND YR NOOB
-    OIC
-
-    IM IN YR loop UPPIN YR i TIL BOTH SAEM i AN STRING IZ LEN YR suffix MKAY
-        I HAS A char1 ITZ STRING IZ AT YR str    AN YR DIFF OF STRING IZ LEN YR str    MKAY AN SUM OF i AN 1 MKAY
-        I HAS A char2 ITZ STRING IZ AT YR suffix AN YR DIFF OF STRING IZ LEN YR suffix MKAY AN SUM OF i AN 1 MKAY
-        DIFFRINT char1 AN char2, O RLY?, YA RLY
+HOW IZ I trim_num_suffix YR num AN YR suffix
+    IM IN YR loop TIL BOTH SAEM 0 AN suffix
+        DIFFRINT MOD OF num AN 10 AN MOD OF suffix AN 10, O RLY?, YA RLY
             FOUND YR NOOB
         OIC
+        num    R QUOSHUNT OF num    AN 10
+        suffix R QUOSHUNT OF suffix AN 10
     IM OUTTA YR loop
-
-    FOUND YR STRING IZ SLICE YR str AN YR 0 AN YR BIGGR OF 0 AN DIFF OF STRING IZ LEN YR str MKAY AN STRING IZ LEN YR suffix MKAY MKAY
+    FOUND YR num
 IF U SAY SO
 
 HOW IZ I constructable YR target AN YR equation AN YR index AN YR with_concat
@@ -108,12 +103,9 @@ HOW IZ I constructable YR target AN YR equation AN YR index AN YR with_concat
     I HAS A ans ITZ A TROOF
 
     with_concat, O RLY?, YA RLY
-        I HAS A trimmed ITZ I IZ trim_suffix YR MAEK target A YARN AN YR MAEK elem A YARN
+        I HAS A trimmed ITZ I IZ trim_num_suffix YR target AN YR elem
         DIFFRINT trimmed AN NOOB, O RLY?, YA RLY
-            BOTH SAEM 0 AN STRING IZ LEN YR trimmed MKAY, O RLY?, YA RLY
-                trimmed R "0"
-            OIC
-            I HAS A new_target ITZ MAEK trimmed A NUMBR
+            I HAS A new_target ITZ trimmed
             ans R I IZ constructable YR new_target AN YR equation AN YR DIFF OF index AN 1 AN YR with_concat MKAY
             ans, O RLY?, YA RLY, FOUND YR WIN, OIC
         OIC
