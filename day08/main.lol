@@ -210,12 +210,6 @@ HOW IZ I solve YR input AN YR full_length
                             I HAS A antinode_pos ITZ pos1 IZ add YR delta IZ mult YR multiplier MKAY MKAY
                             antinodes IZ insert YR antinode_pos MKAY
                         IM OUTTA YR forward_loop
-
-                        delta R delta IZ mult YR -1 MKAY
-                        IM IN YR backward_loop UPPIN YR multiplier WILE I IZ in_bounds YR input'Z size AN YR pos1 IZ add YR delta IZ mult YR multiplier MKAY MKAY MKAY
-                            I HAS A antinode_pos ITZ pos1 IZ add YR delta IZ mult YR multiplier MKAY MKAY
-                            antinodes IZ insert YR antinode_pos MKAY
-                        IM OUTTA YR backward_loop
                     NO WAI
                         I HAS A antinode_pos ITZ pos2 IZ add YR delta MKAY
                         I IZ in_bounds YR input'Z size AN YR antinode_pos MKAY, O RLY?, YA RLY
