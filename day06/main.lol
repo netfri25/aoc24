@@ -1,5 +1,6 @@
 CAN HAS FILE?
 CAN HAS STRING?
+CAN HAS THREADZ?
 
 O HAI IM Mat
     I HAS A size ITZ A NUMBR
@@ -32,6 +33,17 @@ O HAI IM Mat
 
     HOW IZ I in_bounds YR pos
         FOUND YR BOTH OF ME IZ in_range YR pos'Z x MKAY  AN  ME IZ in_range YR pos'Z y MKAY
+    IF U SAY SO
+
+    HOW IZ I clone
+        I HAS A output ITZ Mat IZ new MKAY
+        IM IN YR row_loop UPPIN YR y TIL BOTH SAEM y AN ME'Z size
+            IM IN YR col_loop UPPIN YR x TIL BOTH SAEM x AN ME'Z size
+                I HAS A pos ITZ Pos IZ new YR x AN YR y MKAY
+                output IZ set YR pos AN YR ME IZ get YR pos MKAY MKAY
+            IM OUTTA YR col_loop
+        IM OUTTA YR row_loop
+        FOUND YR output
     IF U SAY SO
 
     HOW IZ I to_string
@@ -239,16 +251,24 @@ HOW IZ I part1 YR input
     FOUND YR I IZ visit YR input MKAY
 IF U SAY SO
 
-HOW IZ I part2 YR input
-    I HAS A total ITZ 0
-    I HAS A original_visited ITZ input'Z visited
-    input'Z visited R VisitedMap IZ new MKAY
+HOW IZ I visit_thread YR param
+    I HAS A grid ITZ param'Z grid
+    I HAS A original_visited ITZ param'Z original_visited
+    I HAS A start_index ITZ param'Z start_index
+    I HAS A end_index ITZ param'Z end_index
 
-    IM IN YR loop UPPIN YR index TIL BOTH SAEM index AN original_visited'Z keys'Z len
+    O HAI IM input
+        I HAS A grid ITZ grid IZ clone MKAY
+        I HAS A visited ITZ VisitedMap IZ new MKAY
+    KTHX
+
+    I HAS A total ITZ 0
+
+    I HAS A index ITZ start_index
+    IM IN YR loop UPPIN YR index TIL BOTH SAEM index AN SMALLR OF end_index AN original_visited'Z keys'Z len
         I HAS A pos ITZ original_visited'Z keys IZ get YR index MKAY
         BOTH SAEM "^" AN input'Z grid IZ get YR pos MKAY, O RLY?, YA RLY, SKIP DIS, OIC
-        input'Z visited R NOOB
-        input HAS A visited ITZ VisitedMap IZ new MKAY
+        input'Z visited R VisitedMap IZ new MKAY
         input'Z grid IZ set YR pos AN YR "#" MKAY
         BOTH SAEM I IZ visit YR input MKAY AN NOOB, O RLY?, YA RLY
             total R SUM OF total AN 1
@@ -256,6 +276,30 @@ HOW IZ I part2 YR input
         input'Z grid IZ set YR pos AN YR "." MKAY
     IM OUTTA YR loop
 
+    FOUND YR total
+IF U SAY SO
+
+HOW IZ I part2 YR input
+    I HAS A thread_count ITZ 10
+    I HAS A slice_len ITZ QUOSHUNT OF input'Z visited'Z keys'Z len AN DIFF OF thread_count AN 1
+
+    I HAS A handles ITZ List IZ new MKAY
+    IM IN YR thread_loop UPPIN YR i TIL BOTH SAEM i AN thread_count
+        O HAI IM param
+            I HAS A grid ITZ input'Z grid
+            I HAS A original_visited ITZ input'Z visited
+            I HAS A start_index ITZ PRODUKT OF i AN slice_len
+            I HAS A end_index ITZ SUM OF start_index AN slice_len
+        KTHX
+
+        I HAS A handle ITZ THREADZ IZ START YR visit_thread AN YR param MKAY
+        handles IZ push YR handle MKAY
+    IM OUTTA YR thread_loop
+
+    I HAS A total ITZ 0
+    IM IN YR handles_loop UPPIN YR i TIL BOTH SAEM i AN handles'Z len
+        total R SUM OF total AN THREADZ IZ JOINZ YR handles IZ get YR i MKAY MKAY
+    IM OUTTA YR handles_loop
     FOUND YR total
 IF U SAY SO
 
