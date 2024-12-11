@@ -41,51 +41,6 @@ O HAI IM List
     IF U SAY SO
 KTHX
 
-O HAI IM ListMap
-    I HAS A keys ITZ LIEK A List
-
-    HOW IZ I new
-        O HAI IM result IM LIEK ListMap
-            I HAS A keys ITZ List IZ new MKAY
-        KTHX
-        FOUND YR result
-    IF U SAY SO
-
-    HOW IZ I insert YR key AN YR value
-        BOTH SAEM NOOB AN ME'Z SRS SMOOSH "key-" AN key MKAY, O RLY?, YA RLY
-            ME HAS A SRS SMOOSH "key-" AN key MKAY ITZ List IZ new MKAY
-            ME'Z keys IZ push YR key MKAY
-        OIC
-
-        I HAS A items_list ITZ ME'Z SRS SMOOSH "key-" AN key
-        items_list IZ push YR value MKAY
-    IF U SAY SO
-
-    HOW IZ I set YR key AN YR list
-        BOTH SAEM NOOB AN ME'Z SRS SMOOSH "key-" AN key MKAY, O RLY?
-            YA RLY
-                ME HAS A SRS SMOOSH "key-" AN key MKAY ITZ list
-            NO WAI
-                ME'Z SRS SMOOSH "key-" AN key MKAY R list
-        OIC
-    IF U SAY SO
-
-    HOW IZ I get YR key
-        FOUND YR ME'Z SRS SMOOSH "key-" AN key MKAY
-    IF U SAY SO
-
-    HOW IZ I to_string
-        I HAS A output ITZ "{:)"
-        IM IN YR loop UPPIN YR i TIL BOTH SAEM i AN ME'Z keys'Z len
-            I HAS A key ITZ ME'Z keys IZ get YR i MKAY
-            I HAS A value ITZ ME IZ get YR key MKAY
-            output R SMOOSH output AN "  " AN key AN ": " AN value AN ":)"
-        IM OUTTA YR loop
-        output R SMOOSH output AN "}:)"
-        FOUND YR output
-    IF U SAY SO
-KTHX
-
 HOW IZ I index_of YR str AN YR char
     I HAS A index ITZ 0
     IM IN YR loop UPPIN YR index TIL EITHER OF  BOTH SAEM index AN STRING IZ LEN YR str MKAY  AN  BOTH SAEM char AN STRING IZ AT YR str AN YR index MKAY
