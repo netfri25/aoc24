@@ -72,13 +72,6 @@ HOW IZ I read_input YR path
     FOUND YR output
 IF U SAY SO
 
-HOW IZ I new_bukkit
-    O HAI IM bukkit
-    KTHX
-
-    FOUND YR bukkit
-IF U SAY SO
-
 I HAS A STONES_CACHE ITZ A BUKKIT
 
 HOW IZ I count_stones YR stone AN YR depth
