@@ -89,15 +89,12 @@ HOW IZ I count_stones YR stone AN YR depth
         YA RLY
             result R I IZ count_stones YR 1 AN YR DIFF OF depth AN 1 MKAY
         NO WAI
-            I HAS A stone_str ITZ MAEK stone A YARN
-            I HAS A digits_count ITZ STRING IZ LEN YR stone_str MKAY
+            I HAS A digits_count ITZ SUM OF 1 AN LOLG OF stone AN 10
             BOTH SAEM 0 AN MOD OF digits_count AN 2, O RLY?
                 YA RLY
-                    I HAS A index ITZ QUOSHUNT OF digits_count AN 2
-                    I HAS A lhs_str ITZ STRING IZ SLICE YR stone_str AN YR 0     AN YR index MKAY
-                    I HAS A rhs_str ITZ STRING IZ SLICE YR stone_str AN YR index AN YR digits_count MKAY
-                    I HAS A lhs ITZ MAEK lhs_str A NUMBR
-                    I HAS A rhs ITZ MAEK rhs_str A NUMBR
+                    I HAS A half_digits ITZ POWR OF 10 AN QUOSHUNT OF digits_count AN 2
+                    I HAS A lhs ITZ QUOSHUNT OF stone AN half_digits
+                    I HAS A rhs ITZ MOD OF      stone AN half_digits
                     result R SUM OF  I IZ count_stones YR lhs AN YR DIFF OF depth AN 1 MKAY  AN  I IZ count_stones YR rhs AN YR DIFF OF depth AN 1 MKAY
                 NO WAI
                     result R I IZ count_stones YR PRODUKT OF stone AN 2024 AN YR DIFF OF depth AN 1 MKAY
