@@ -272,7 +272,7 @@ DIR_MAP HAS A SRS "v" ITZ Pos IZ new YR  0 AN YR  1 MKAY
 DIR_MAP HAS A SRS "<" ITZ Pos IZ new YR -1 AN YR  0 MKAY
 DIR_MAP HAS A SRS "^" ITZ Pos IZ new YR  0 AN YR -1 MKAY
 
-HOW IZ I simulate YR grid AN YR insts
+HOW IZ I simulate YR grid AN YR insts AN YR display
     I HAS A pos ITZ I IZ find_robot YR grid MKAY
 
     IM IN YR loop UPPIN YR i TIL BOTH SAEM i AN insts'Z len
@@ -281,6 +281,12 @@ HOW IZ I simulate YR grid AN YR insts
         I HAS A next_pos ITZ I IZ move YR grid AN YR pos AN YR dir MKAY
         NOT next_pos, O RLY?, YA RLY, SKIP DIS, OIC
         pos R next_pos
+        display, O RLY?, YA RLY
+            I HAS A text ITZ grid IZ to_string MKAY
+            text R STRING IZ SLICE YR text AN YR 0 AN YR DIFF OF STRING IZ LEN YR text MKAY AN 1 MKAY
+            VISIBLE SMOOSH ":(1B)[2J:(1B)[H" AN text
+            I DUZ "sleep 0.02"
+        OIC
     IM OUTTA YR loop
 IF U SAY SO
 
@@ -326,7 +332,7 @@ HOW IZ I part1 YR input
     I HAS A grid ITZ input'Z grid IZ clone MKAY
     I HAS A insts ITZ input'Z insts
 
-    I IZ simulate YR grid AN YR insts MKAY
+    I IZ simulate YR grid AN YR insts AN YR FAIL MKAY
     FOUND YR I IZ calculate_score YR grid MKAY
 IF U SAY SO
 
@@ -335,7 +341,7 @@ HOW IZ I part2 YR input
     I HAS A insts ITZ input'Z insts
 
     grid R I IZ extend YR grid MKAY
-    I IZ simulate YR grid AN YR insts MKAY
+    I IZ simulate YR grid AN YR insts AN YR FAIL MKAY
     FOUND YR I IZ calculate_score YR grid MKAY
 IF U SAY SO
 
@@ -349,7 +355,7 @@ HOW IZ I main
     sol R I IZ part1 YR input MKAY
     VISIBLE SMOOSH "part 1:: " AN sol
     sol R I IZ part2 YR input MKAY
-    VISIBLE SMOOSH "part 2:: " AN sol  BTW 9021
+    VISIBLE SMOOSH "part 2:: " AN sol
 IF U SAY SO
 
 I IZ main MKAY
