@@ -192,12 +192,9 @@ IF U SAY SO
 
 HOW IZ I move YR grid AN YR pos AN YR dir
     BTW don't move if it can't be moved
-    NOT I IZ can_move YR grid AN YR pos AN YR dir MKAY, O RLY?, YA RLY
-        FOUND YR NOOB
-    OIC
+    NOT I IZ can_move YR grid AN YR pos AN YR dir MKAY, O RLY?, YA RLY, FOUND YR NOOB, OIC
 
     I HAS A cell ITZ grid IZ get YR pos MKAY
-
     cell, WTF?
         OMG "@"  BTW intentional fallthrough
         OMG "O"
@@ -230,16 +227,12 @@ HOW IZ I move YR grid AN YR pos AN YR dir
             grid IZ set YR pos_left AN YR "." MKAY
             grid IZ set YR pos_right AN YR "." MKAY
 
-            dir'Z x, WTF?
-                OMG 1
-                    I IZ move YR grid AN YR next_pos_right AN YR dir MKAY
+            DIFFRINT -1 AN dir'Z x, O RLY?, YA RLY
+                I IZ move YR grid AN YR next_pos_right AN YR dir MKAY
+            OIC
 
-                OMG -1
-                    I IZ move YR grid AN YR next_pos_left AN YR dir MKAY
-
-                OMG 0
-                    I IZ move YR grid AN YR next_pos_right AN YR dir MKAY
-                    I IZ move YR grid AN YR next_pos_left AN YR dir MKAY
+            DIFFRINT 1 AN dir'Z x, O RLY?, YA RLY
+                I IZ move YR grid AN YR next_pos_left AN YR dir MKAY
             OIC
 
             grid IZ set YR next_pos_right AN YR "]" MKAY
